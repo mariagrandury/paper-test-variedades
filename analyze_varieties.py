@@ -77,6 +77,16 @@ def create_heatmap():
         col.split("puntuacion_")[1].split("_sobre_30")[0] for col in score_data.columns
     ]
 
+    # Wrap long column names and update mexicano
+    score_data.columns = [
+        (
+            "caribeño\ncontinental"
+            if col == "caribeno_continental"
+            else "mexicano y\ncentroamericano" if col == "mexicano" else col
+        )
+        for col in score_data.columns
+    ]
+
     plt.figure(figsize=(12, 8))
     sns.heatmap(
         score_data,
@@ -86,10 +96,13 @@ def create_heatmap():
         center=15,
         vmin=0,
         vmax=30,
+        annot_kws={"size": 14},  # Increase annotation font size
     )
-    plt.title("Mapa de Calor de Puntuaciones por Variedad")
+    plt.title("Mapa de Calor de Puntuaciones por Variedad", fontsize=14, pad=10)
     plt.xlabel("")  # Remove x-label
     plt.ylabel("")  # Remove y-label
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
     plt.tight_layout()
     plt.savefig("plots/mapa_calor_puntuaciones.png")
     plt.close()
@@ -128,9 +141,9 @@ def analyze_error_patterns():
         label="Léxico",
         color="#fdae61",  # Orange
     )
-    plt.xticks(x, mean_errors["modelos"], rotation=45, ha="right")
-    plt.ylabel("Tasa Media de Error (%)")
-    plt.legend()
+    plt.xticks(x, mean_errors["modelos"], rotation=45, ha="right", fontsize=14)
+    plt.ylabel("Tasa Media de Error (%)", fontsize=14)
+    plt.legend(fontsize=14)
     plt.tight_layout()
     plt.savefig("plots/barplot_tasas_error_por_modelo.png")
     plt.close()
@@ -281,14 +294,28 @@ def analyze_cereal_correlation():
         correlation_data[strongest_metric],
         correlation_data["Mean Score"],
         color="#2b83ba",  # Blue
+        s=100,  # Increase marker size
     )
     for variety in varieties:
+        # Update the label for mexicano in the scatter plot
+        label = (
+            "mexicano y centroamericano"
+            if variety == "mexicano"
+            else (
+                "caribeño continental" if variety == "caribeno_continental" else variety
+            )
+        )
         plt.annotate(
-            variety,
+            label,
             (
                 correlation_data.loc[variety, strongest_metric],
                 correlation_data.loc[variety, "Mean Score"],
             ),
+            fontsize=14,
+            xytext=(5, 5),  # Add offset (pixels)
+            textcoords="offset points",  # Use offset coordinates
+            ha="left",  # Horizontal alignment
+            va="bottom",  # Vertical alignment
         )
 
     # Add correlation coefficient
@@ -299,10 +326,13 @@ def analyze_cereal_correlation():
         f"Correlación: {corr_value:.2f}",
         transform=plt.gca().transAxes,
         bbox=dict(facecolor="white", alpha=0.8),
+        fontsize=14,  # Increase correlation text font size
     )
 
-    plt.xlabel(metric_name)
-    plt.ylabel("Puntuación Media")
+    plt.xlabel(metric_name, fontsize=14)
+    plt.ylabel("Puntuación Media", fontsize=14)
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
     plt.tight_layout()
     plt.savefig("plots/scatterplot_puntuacion_media_vs_datos_cereal.png")
     plt.close()
