@@ -1,0 +1,10 @@
+modelos,puntuacion_antillano_sobre_30,aciertos_antillano_sobre_30,fallos_morfosintaxis_antillano_porcentaje,fallos_lexico_antillano_porcentaje,puntuacion_andino_sobre_30,aciertos_andino_sobre_30,fallos_morfosintaxis_andino_porcentaje,fallos_lexico_andino_porcentaje,puntuacion_caribeno_continental_sobre_30,aciertos_caribeno_continental_sobre_30,fallos_morfosintaxis_caribeno_continental_porcentaje,fallos_lexico_caribeno_continental_porcentaje,puntuacion_chileno_sobre_30,aciertos_chileno_sobre_30,fallos_morfosintaxis_chileno_porcentaje,fallos_lexico_chileno_porcentaje,puntuacion_mexicano_sobre_30,aciertos_mexicano_sobre_30,fallos_morfosintaxis_mexicano_porcentaje,fallos_lexico_mexicano_porcentaje,puntuacion_peninsular_sobre_30,aciertos_peninsular_sobre_30,fallos_morfosintaxis_peninsular_porcentaje,fallos_lexico_peninsular_porcentaje,puntuacion_rioplatense_sobre_30,aciertos_rioplatense_sobre_30,fallos_morfosintaxis_rioplatense_porcentaje,fallos_lexico_rioplatense_porcentaje
+GPT-4o,18.2,21,30,30,17.6,21,30,30,19.3,22,25,30,20.4,24,25,10,17.5,21,30,30,28.5,29,5,0,27.1,28,10,0
+GPT-4o-mini,13.9,18,40,40,7.1,14,55,50,13.2,18,45,30,16.9,21,35,20,17.4,21,25,40,27.4,28,5,10,21.4,24,25,10
+Gemma-2-9b-it,8.3,14,55,50,5.2,12,45,70,13.5,18,40,40,12.9,18,30,60,9.1,15,50,50,23.3,25,20,10,16.7,20,25,50
+Mistral-7b,4.5,11,65,80,5.4,12,40,100,8.0,16,45,50,10.2,17,30,70,6.5,13,45,70,22.2,24,15,30,2.5,10,60,80
+Llama-3.2-11B-Vision-Instruct,2.6,10,45,70,5.7,12,50,80,6.5,14,50,60,7.5,15,35,80,8.8,15,45,50,19.4,22,20,40,8.1,10,65,70
+Occiglot-7b-es-en-instruct,8.2,14,45,70,8.7,14,35,90,7.9,14,45,70,12.8,15,40,70,4.7,12,60,60,18.8,22,25,30,2.9,10,55,90
+Llama-3.1-8B-Instruct,5.3,12,55,70,5.9,12,50,80,4.7,13,55,60,5.8,14,40,80,5.9,13,55,60,15.5,19,25,50,9.6,15,30,90
+Llama-3.2-3B-Instruct,12.35,10,65,70,10.2,12,50,80,10.3,12,55,70,10.2,13,45,80,6.5,13,45,80,14.4,18,20,80,12.0,14,35,90
+Yi-1.5-9B-Chat,5.3,12,55,50,8.0,14,40,80,5.4,12,50,80,8.55,12,50,80,0.9,10,55,90,12.5,17,40,50,5.4,12,60,60
